@@ -82,3 +82,67 @@ JOIN artist ar ON ar.artist_id = al.artist_id
 GROUP BY ar.name;
 
 --distinct
+SELECT DISTINCT composer FROM track;
+
+SELECT DISTINCT billing_postal_code FROM invoice;
+
+SELECT DISTINCT company FROM customer;
+
+--deleteing rows
+CREATE TABLE practice_delete (
+    name TEXT,
+    type TEXT,
+    value INTEGER
+);
+
+INSERT INTO practice_delete (name, type, value)
+VALUES ('delete', 'bronze', 50);
+INSERT INTO practice_delete (name, type, value)
+VALUES ('delete', 'silver', 100);
+INSERT INTO practice_delete (name, type, value)
+VALUES ('delete', 'gold', 150);
+
+DELETE FROM practice_delete
+WHERE type = 'bronze' AND 'silver' AND WHERE value = 150;
+
+
+
+--eCommerce Sim 
+
+CREATE TABLE users (
+User_id SERIAL PRIMARY KEY,
+name TEXT,
+email TEXT
+)
+
+INSERT INTO users ( name )
+VALUES ('Peter'), ('James'), ('John');
+
+CREATE TABLE products ( 
+Product_id SERIAL PRIMARY KEY,
+Name TEXT, 
+Price DECIMAL
+)
+
+INSERT INTO products (name, price)
+VALUES ('car', 1.00), ('house', 2.00), ('plane', 3.00)
+
+CREATE TABLE orders(
+Orders_id SERIAL PRIMARY KEY,
+	User_id INT REFERENCES users(user_id),
+	products _id INT REFERENCES products(product_id)
+);
+
+SELECT * products FROM oder_id = 1;
+SELECT * orders;
+SELECT SUM(product_id = *)
+
+INSERT INTO orders (user_id, product_id)
+VALUES 
+(1, 2)
+
+SELECT p.name, p.price FROM orders c
+JOIN products p ON c.product_id = p.product_id
+WHERE c.user_id = 3;
+
+    
